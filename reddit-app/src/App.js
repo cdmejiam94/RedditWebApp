@@ -1,14 +1,19 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Login from "./components/Login";
+import Home from "./components/Home";
+import BestList from "./components/BestList";
 
 function App() {
   return (
-    <div className="container">
-      <header className="header">
-        <p>
-          It works!!
-        </p>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login/callback" element={<BestList/>}/>
+          <Route path="/" element={<Home/>}/>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
